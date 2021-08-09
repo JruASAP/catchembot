@@ -9,18 +9,18 @@ const grassStarters = [];
 fireStarters.push("4","155","255","390","498","653","725","813")
 grassStarters.push("1","152","252","387","495","650","722","810");
 waterStarters.push("7","158","258","393","501","656","728","816");
-pikaEeveeStarter = [];
-pikaEeveeStarter.push("25","133")
+otherStarter = [];
+otherStarter.push("25","133")
 //console.log(starters);
 const randomStarter = starters[Math.floor(Math.random() * starters.length)];
 const randomFireStarter = fireStarters[Math.floor(Math.random() * fireStarters.length)];
 const randomWaterStarter = waterStarters[Math.floor(Math.random() * waterStarters.length)];
 const randomGrassStarter = grassStarters[Math.floor(Math.random() * grassStarters.length)];
-const randompikaEeveeStarter = pikaEeveeStarter[Math.floor(Math.random() * pikaEeveeStarter.length)]; 
+const randomotherStarter = otherStarter[Math.floor(Math.random() * otherStarter.length)]; 
 //console.log(randompikaEeveeStarter);
 
 async function getStarterMetadata() {
-    console.log(chalk.green(`You have chosen a random starter! Grabbing attributes from Pokeapi for Pokemon ${randomStarter}`))
+    console.log(chalk.green(`You have chosen a random starter! Grabbing attributes from Pokeapi for Pokemon ${randomStarter}`.))
       try {
           let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randomStarter}`
           let response =  await axios.get(sourceUrl);
@@ -68,9 +68,9 @@ async function getStarterMetadata() {
       }
   };
   async function getOtherStarterMetadata() {
-    console.log(chalk.green(`You have chosen a non-traditional starter! Grabbing attributes from Pokeapi for Pokemon ${randompikaEeveeStarter}.`))
+    console.log(chalk.green(`You have chosen a non-traditional starter! Grabbing attributes from Pokeapi for Pokemon ${randomotherStarter}.`))
       try {
-          let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randompikaEeveeStarter}`
+          let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randomotherStarter}`
           let response =  await axios.get(sourceUrl);
           // console.log(response.data);
       return response.data;
