@@ -32,7 +32,7 @@ async function getStarterMetadata() {
       }
   };
   async function getFireStarterMetadata() {
-    console.log(chalk.green(`You have chose a fire starter!  Grabbing attributes from Pokeapi for Pokemon ${randomFireStarter}`))
+    console.log(chalk.green(`You have chosen a fire starter! Grabbing attributes from Pokeapi for Pokemon ${randomFireStarter}.`))
       try {
           let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randomFireStarter}`
           let response =  await axios.get(sourceUrl);
@@ -44,7 +44,7 @@ async function getStarterMetadata() {
       }
   };
   async function getWaterStarterMetadata() {
-    console.log(chalk.green(`You have chose a water starter! Grabbing attributes from Pokeapi for Pokemon ${randomWaterStarter}`))
+    console.log(chalk.green(`You have chosen a water starter! Grabbing attributes from Pokeapi for Pokemon ${randomWaterStarter}.`))
       try {
           let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randomWaterStarter}`
           let response =  await axios.get(sourceUrl);
@@ -56,7 +56,7 @@ async function getStarterMetadata() {
       }
   };
   async function getGrassStarterMetadata() {
-    console.log(chalk.green(`You have chose a grass starter! Grabbing attributes from Pokeapi for Pokemon ${randomGrassStarter}`))
+    console.log(chalk.green(`You have chosen a grass starter! Grabbing attributes from Pokeapi for Pokemon ${randomGrassStarter}.`))
       try {
           let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randomGrassStarter}`
           let response =  await axios.get(sourceUrl);
@@ -67,8 +67,8 @@ async function getStarterMetadata() {
           console.log(err)
       }
   };
-  async function getPikaEeveeStarterMetadata() {
-    console.log(chalk.green(`You have chose Pikachu or Eevee for a starter! Grabbing attributes from Pokeapi for Pokemon ${randompikaEeveeStarter}`))
+  async function getOtherStarterMetadata() {
+    console.log(chalk.green(`You have chosen a non-traditional starter! Grabbing attributes from Pokeapi for Pokemon ${randompikaEeveeStarter}.`))
       try {
           let sourceUrl = `https://pokeapi.co/api/v2/pokemon/${randompikaEeveeStarter}`
           let response =  await axios.get(sourceUrl);
@@ -100,8 +100,8 @@ async function init(){
         const starterName = starterMetadata.name;
         const starterSprite = starterMetadata.sprites.front_default;
         console.log(chalk.yellow(`Congrats Trainer, you caught ${starterName}!`));}
-    else if (starterType === 'yellow') {
-        const starterMetadata = await getPikaEeveeStarterMetadata();
+    else if (starterType === 'other') {
+        const starterMetadata = await getOtherStarterMetadata();
         const starterName = starterMetadata.name;
         const starterSprite = starterMetadata.sprites.front_default;
         console.log(chalk.yellow(`Congrats Trainer, you caught ${starterName}!`));}
