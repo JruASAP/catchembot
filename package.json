@@ -1,6 +1,29 @@
 {
+  "name": "catchembot",
+  "version": "1.0.0",
+  "description": "catchembot",
+  "main": "credentials.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JruASAP/catchembot.git"
+  },
+  "keywords": [
+    "pokemon",
+    "catchembot",
+    "twitter",
+    "bot"
+  ],
+  "author": "jruasap",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/JruASAP/catchembot/issues"
+  },
+  "homepage": "https://github.com/JruASAP/catchembot#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "chalk": "^4.1.2"
+    "chalk": "~4.1.2"
   }
 }
